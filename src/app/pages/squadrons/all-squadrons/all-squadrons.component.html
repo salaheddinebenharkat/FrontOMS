@@ -1,0 +1,67 @@
+<div class=" content">
+    <div class=" row">
+        <ol class=" breadcrumb bg-transparent ml-3">
+            <li class=" breadcrumb-item"><a href="#"> Home </a></li>
+            <li class=" breadcrumb-item"><a href="#"> Library </a></li>
+            <li class=" breadcrumb-item active">Data</li>
+        </ol>
+        <div class=" col-md-12">
+            <div class=" card">
+                <div class=" card-header">
+                    <h4 class=" card-title">Squadrons List</h4>
+                </div>
+                <div class=" card-body">
+                    <div class=" table-responsive">
+                        <table class=" table">
+                            <thead class=" text-primary">
+                            <tr>
+                                <th class=" text-center">#</th>
+                                <th class=" text-center">Name</th>
+                                <th class=" text-center">Airbase</th>
+                                <th class=" text-center">Creation date</th>
+                                <th class=" text-center">Aircraft Type</th>
+                                <th class=" text-center">Total Aircraft</th>
+                                <th class=" text-center">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let squadron of squadrons">
+                                <td class=" text-center">{{squadron.id}}</td>
+                                <td class=" text-center">{{squadron.name}}</td>
+                                <td class=" text-center">{{squadron.airbase.name}}</td>
+                                <td class=" text-center">{{squadron.creationDate | date:'d/M/yyyy'}}</td>
+                                <td class=" text-center">{{squadron.aircraftType}}</td>
+                                <td class=" text-center">{{squadron.totalAircraft}}</td>
+                                <td class=" text-center">
+                                    <button
+                                            class=" btn btn-success btn-link btn-sm btn-icon"
+                                            tooltip="Details"
+                                            type="button"
+                                    >
+                                        <i class=" tim-icons icon-paper" style="color: #0e84f8"> </i>
+                                    </button>
+                                    <button
+                                            class=" btn btn-success btn-link btn-sm btn-icon"
+                                            tooltip="Edit"
+                                            type="button"
+                                    >
+                                        <i class=" tim-icons icon-pencil"> </i>
+                                    </button>
+                                    <button
+                                            (click)="handleDelete(squadron)"
+                                            class=" btn btn-danger btn-link btn-sm"
+                                            tooltip="Delete"
+                                            type="button"
+                                    >
+                                        <i class=" tim-icons icon-simple-remove"> </i>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

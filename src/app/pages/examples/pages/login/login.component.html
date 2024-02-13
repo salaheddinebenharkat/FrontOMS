@@ -1,0 +1,82 @@
+<div class="full-page login-page ">
+  <div class=" content">
+    <div class="">
+        <div class=" ">
+            <form class=" form">
+                <div class=" col-lg-4 col-md-6 ml-auto mr-auto">
+                    <form id="LoginValidation" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <div class=" card">
+                            <div class=" card-header">
+                                <h4 class=" card-title" style="text-align: center">Authentication Form</h4>
+                            </div>
+                            <div class=" col-md-8 ml-auto mr-auto card-body">
+                                <div
+                                        class=" form-group has-label"
+                                        [ngClass]="{
+                'has-danger':
+                  ((focusTouched3 || login) && loginF.fullName.errors) ||
+                  (loginF.fullName.value != '' && loginF.fullName.errors),
+                'has-success': !loginF.fullName.errors
+              }"
+                                >
+                                    <label> User Name * </label>
+                                    <input
+                                            class=" form-control"
+                                            name="fullName"
+                                            required=""
+                                            formControlName="fullName"
+                                            (focus)="focusTouched3 = true"
+                                            type="text"
+                                    />
+                                    <label
+                                            class="error"
+                                            *ngIf="
+                  ((focusTouched3 || login) && loginF.fullName.errors) ||
+                  (loginF.fullName.value != '' && loginF.fullName.errors)
+                "
+                                    >This field is required.</label
+                                    >
+                                </div>
+                                <div
+                                        class=" form-group has-label"
+                                        [ngClass]="{
+                'has-danger':
+                  ((focusTouched5 || login) && loginF.password.errors) ||
+                  (loginF.password.value != '' && loginF.password.errors),
+                'has-success': !loginF.password.errors
+              }"
+                                >
+                                    <label> Password * </label>
+                                    <input
+                                            class=" form-control"
+                                            name="password"
+                                            formControlName="password"
+                                            (focus)="focusTouched5 = true"
+                                            type="password"
+                                    />
+                                    <label
+                                            class="error"
+                                            *ngIf="
+                  ((focusTouched5 || login) && loginF.password.errors) ||
+                  (loginF.password.value != '' && loginF.password.errors)
+                "
+                                    >This field is required.</label
+                                    >
+                                </div>
+                            </div>
+                            <div class=" card-footer text-left">
+                                <button class=" btn btn-warning mr-1" type="submit">LOGIN</button>
+                                <a class=" pull-right" href="javascript:void(0)">
+                                    CREATE ACCOUNT?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+
