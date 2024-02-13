@@ -33,10 +33,18 @@ export class NewSQuadronComponent implements OnInit {
 
 
   ngOnInit(): void {
+    /*
+    private String name;
+    private Long airbaseId;
+    private Date creationDate;
+    private String AircraftType;
+    private String totalAircraft;
+    private String description;
+    */
 
       this.squadronForm = this.fb.group({
         name : this.fb.control(''),
-        airbase : this.fb.control(1),
+        airbaseId : this.fb.control(1),
         creationDate : this.fb.control(''),
         aircraftType : this.fb.control(''),
         totalAircraft : this.fb.control(0),
@@ -48,10 +56,11 @@ export class NewSQuadronComponent implements OnInit {
 
     saveSquadron() {
         let squadron = this.squadronForm.value;
+      console.log(squadron);
         this.squadronService.saveSquadron(squadron).subscribe({
             next : data =>{
-                console.log(squadron);
-                alert(JSON.stringify(data));
+                console.log('saved',squadron);
+                //alert(JSON.stringify(data));
             },
             error : err =>{
                 console.log(err);
