@@ -17,7 +17,7 @@
                                     <label> Airbase </label>
                                     <select class="form-control" formControlName="airbase">
                                         <option selected>Select an airbase </option>
-                                        <option *ngFor="let airbase of airbases">{{ airbase.name}}</option>
+                                        <option *ngFor="let airbase of airbases" [value]="airbase.id">{{ airbase.name}}</option>
                                     </select>
                                 </div>
                             </div>
