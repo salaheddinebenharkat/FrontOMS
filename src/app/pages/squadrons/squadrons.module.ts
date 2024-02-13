@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NewSQuadronComponent} from "./new-squadron/new-squadron.component";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
+import {AllSquadronsComponent} from "./all-squadrons/all-squadrons.component";
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
         FormsModule
     ],
     declarations: [
-        NewSQuadronComponent
+        NewSQuadronComponent,
+        AllSquadronsComponent
     ],
     exports: [
         NewSQuadronComponent

@@ -15,7 +15,7 @@
                             <div class=" col-md-4 px-md-1">
                                 <div class=" form-group">
                                     <label> Airbase </label>
-                                    <select class="form-control" formControlName="airbase">
+                                    <select class="form-control" formControlName="airbaseId">
                                         <option selected>Select an airbase </option>
                                         <option *ngFor="let airbase of airbases" [value]="airbase.id">{{ airbase.name}}</option>
                                     </select>
@@ -65,10 +65,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class=" card-footer">
+                            <button class=" btn btn-fill btn-danger" type="submit">Save</button>
+                        </div>
                     </form>
-                </div>
-                <div class=" card-footer">
-                    <button class=" btn btn-fill btn-danger" type="submit">Save</button>
                 </div>
             </div>
         </div>

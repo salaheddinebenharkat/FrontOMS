@@ -56,7 +56,7 @@ export class NewSQuadronComponent implements OnInit {
 
     saveSquadron() {
         let squadron = this.squadronForm.value;
-      console.log(squadron);
+        console.log(squadron);
         this.squadronService.saveSquadron(squadron).subscribe({
             next : data =>{
                 console.log('saved',squadron);
