@@ -16,11 +16,13 @@
                                 <div class=" form-group">
                                     <label> Airbase </label>
                                     <select class="form-control" formControlName="airbase">
-                                        <option selected>Select an airbase </option>
+                                        <option  value="1">DUKHAN</option>
+                                        <option value="2">EL ODEID</option>
+                                        <option value="3">DOHA</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class=" col-md-4 pl-md-1">
+                            <!--div class=" col-md-4 pl-md-1">
                                 <div class=" form-group">
                                     <label> Creation date </label>
                                     <input
@@ -34,22 +36,33 @@
                                            type="text"
                                     />
                                 </div>
+                            </div-->
+                            <div class=" col-md-4 pl-md-1">
+                                <div class=" form-group">
+                                    <label> Parking color </label>
+                                    <select class="form-control" formControlName="aircraftType">
+                                        <option  value="1">GREEN</option>
+                                        <option value="2">ORANGE</option>
+                                        <option value="3">RED</option>
+                                        <option value="3">BLUE</option>
+                                    </select>
+                                </div>
                             </div>
+
                         </div>
 
                         <div class=" row">
-                            <div class=" col-md-6">
+                            <div class=" col-md-6 pr-md-1">
                                 <div class=" form-group">
                                     <label> Aircraft Type </label>
                                     <select class="form-control" formControlName="aircraftType">
-                                        <option selected>Select an aircraft type </option>
                                         <option  value="1">TYPHON</option>
                                         <option value="2">RAFALE</option>
                                         <option value="3">APACHE</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class=" col-md-6">
+                            <div class=" col-md-6 pl-md-1">
                                 <div class=" form-group">
                                     <label> Total Places </label>
                                     <input class=" form-control" formControlName="totalAircraft" type="number" />

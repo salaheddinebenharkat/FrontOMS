@@ -122,6 +122,33 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
   {
+    path: "/aircraftMaker",
+    title: "aircraftMaker",
+    type: "sub",
+    rtlTitle: "  خرائط",
+    icontype: "tim-icons icon-settings",
+    isCollapsed: true,
+    collapse: "aircraftMaker",
+    children: [
+      {
+        path: "newAircraftMaker",
+        rtlTitle: " خرائط جوجل ",
+        rtlSmallTitle: "ز ",
+        title: "New Aircraft Maker",
+        type: "link",
+        smallTitle: "GM"
+      },
+      {
+        path: "allAircraftMakers",
+        rtlTitle: "خريطة كاملة الشاشة ",
+        rtlSmallTitle: " وو",
+        title: "Aircraft Makers List",
+        type: "link",
+        smallTitle: "FSM"
+      }
+    ]
+  },
+  {
     path: "/pages",
     title: "Pages",
     type: "sub",

@@ -7,14 +7,14 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
-import {NewParkingComponent} from "./new-parking/new-parking.component";
-import {ParkingRoutes} from "./parking.routing";
-import {AllParkingComponent} from "./all-parking/all-parking.component";
+import {AircraftMakersRoutes} from "./aircraftMakers.routing";
+import {AllAircraftmakersComponent} from "./all-aircraftmakers/all-aircraftmakers.component";
+import {NewAircraftmakerComponent} from "./new-aircraftmaker/new-aircraftmaker.component";
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(ParkingRoutes),
+        RouterModule.forChild(AircraftMakersRoutes),
         TooltipModule.forRoot(),
         CollapseModule.forRoot(),
         ReactiveFormsModule,
@@ -23,11 +23,11 @@ import {AllParkingComponent} from "./all-parking/all-parking.component";
         FormsModule
     ],
     declarations: [
-        NewParkingComponent,
-        AllParkingComponent
+        NewAircraftmakerComponent,
+        AllAircraftmakersComponent
     ],
     exports: [
-        AllParkingComponent,
+        AllAircraftmakersComponent
     ]
 })
-export class ParkingModule {}
+export class AircraftMakersModule {}

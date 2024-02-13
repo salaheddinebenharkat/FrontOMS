@@ -12,7 +12,6 @@ import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { RtlLayoutComponent } from "./layouts/rtl-layout/rtl-layout.component";
-import { AllSquadronsComponent } from './pages/squadrons/all-squadrons/all-squadrons.component';
 import {HttpClientModule} from "@angular/common/http";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 
@@ -21,8 +20,8 @@ import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    RtlLayoutComponent,
-    AllSquadronsComponent
+    RtlLayoutComponent
+
   ],
   imports: [
     CommonModule,
