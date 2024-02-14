@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-airbase.component.scss']
 })
 export class NewAirbaseComponent implements OnInit {
+  date: Date | undefined;
 
   constructor() { }
 

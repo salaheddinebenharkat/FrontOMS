@@ -16,7 +16,6 @@
                                 <div class=" form-group">
                                     <label> Airbase </label>
                                     <select class="form-control" formControlName="airbaseId">
-                                        <option selected>Select an airbase </option>
                                         <option *ngFor="let airbase of airbases" [value]="airbase.id">{{ airbase.name}}</option>
                                     </select>
                                 </div>
@@ -43,17 +42,16 @@
                                 <div class=" form-group">
                                     <label> Aircraft Type </label>
                                     <select class="form-control" formControlName="aircraftType">
-                                        <option selected>Select an aircraft type </option>
-                                        <option  value="1">TYPHON</option>
-                                        <option value="2">RAFALE</option>
-                                        <option value="3">APACHE</option>
+                                        <option>TYPHON</option>
+                                        <option>RAFALE</option>
+                                        <option>APACHE</option>
                                     </select>
                                 </div>
                             </div>
                             <div class=" col-md-6">
                                 <div class=" form-group">
                                     <label> Total Aircraft </label>
-                                    <input class=" form-control" formControlName="totalAircraft" type="number" />
+                                    <input class=" form-control" placeholder="Total aircraft" formControlName="totalAircraft" type="number" />
                                 </div>
                             </div>
                         </div>

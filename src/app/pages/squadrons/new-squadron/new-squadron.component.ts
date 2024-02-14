@@ -42,12 +42,13 @@ export class NewSQuadronComponent implements OnInit {
     private String description;
     */
 
+
       this.squadronForm = this.fb.group({
         name : this.fb.control(''),
-        airbaseId : this.fb.control(1),
+        airbaseId : this.fb.control('0'),
         creationDate : this.fb.control(''),
         aircraftType : this.fb.control(''),
-        totalAircraft : this.fb.control(0),
+        totalAircraft : this.fb.control(''),
         description : this.fb.control(''),
       });
 

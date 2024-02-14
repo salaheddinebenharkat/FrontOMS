@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AirbasesService} from "../airbases.service";
 
 @Component({
   selector: 'app-all-airbases',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllAirbasesComponent implements OnInit {
 
-  constructor() { }
+  airbases : Array<any>;
+  constructor(private airbasesService:AirbasesService) { }
+
+  getAllAirbases(){
+    this.airbasesService.getAirbases()
+        .subscribe({
+          next : data =>{
+            this.airbases = data;
+            console.log(this.airbases);
+          },
+          error : err => {
+            console.log(err)
+          }
+        })
+  }
 
   ngOnInit(): void {
+    this.getAllAirbases();
   }
 
 }

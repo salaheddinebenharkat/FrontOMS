@@ -6,6 +6,8 @@ import {NgModule} from "@angular/core";
 import {TooltipModule} from "ngx-bootstrap/tooltip";
 import {CollapseModule} from "ngx-bootstrap/collapse";
 import {ReactiveFormsModule} from "@angular/forms";
+import {AllAirbasesComponent} from "./all-airbases/all-airbases.component";
+import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 
 @NgModule({
     imports: [
@@ -13,9 +15,11 @@ import {ReactiveFormsModule} from "@angular/forms";
         RouterModule.forChild(AirbasesRoutes),
         TooltipModule.forRoot(),
         CollapseModule.forRoot(),
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BsDatepickerModule
     ],
     declarations: [
+        AllAirbasesComponent,
         NewAirbaseComponent
     ],
     exports: [
