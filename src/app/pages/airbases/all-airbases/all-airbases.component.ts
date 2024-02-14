@@ -28,4 +28,15 @@ export class AllAirbasesComponent implements OnInit {
     this.getAllAirbases();
   }
 
+    handleDelete(airbase: any) {
+        if (confirm("Are you sure ?"))
+            this.airbasesService.deleteAirbase(airbase)
+                .subscribe({
+                    next:data => {
+                        //this.getAllSquadrons();
+                        this.airbases = this.airbases.filter(s=>s.id!=airbase.id);
+                    }
+                })
+    }
+
 }

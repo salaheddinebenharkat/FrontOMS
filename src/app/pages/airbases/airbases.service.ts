@@ -17,8 +17,8 @@ export class AirbasesService {
   }
 
 
-  public deleteSquadron(squadron:any){
-    return this.http.delete<any>(`${this.apiServerUrl}/api/squadrons/${squadron.id}`);
+  public deleteAirbase(airbase:any){
+    return this.http.delete<any>(`${this.apiServerUrl}/api/airbases/${airbase.id}`);
   }
 
   saveSquadron(squadron: any) {
