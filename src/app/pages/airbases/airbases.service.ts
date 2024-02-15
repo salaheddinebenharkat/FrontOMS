@@ -15,6 +15,9 @@ export class AirbasesService {
   public getAirbases() : Observable<Array<any>>{
     return this.http.get<Array<any>>(`${this.apiServerUrl}/api/airbases/all`);
   }
+  public getAirbase(id){
+    return this.http.get(`${this.apiServerUrl}/api/airbases/${id}`);
+  }
 
 
   public deleteAirbase(airbase:any){

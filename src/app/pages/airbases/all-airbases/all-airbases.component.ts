@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AirbasesService} from "../airbases.service";
-
-
+import {Router} from "@angular/router";
+import swal from "sweetalert2";
 export enum SelectionType {
     single = "single",
     multi = "multi",
@@ -486,7 +486,8 @@ export class AllAirbasesComponent implements OnInit {
 
 
   airbases : Array<any>;
-  constructor(private airbasesService:AirbasesService) {
+  constructor(private airbasesService:AirbasesService,private _router:Router) {
+      console.log('ici')
       this.temp = this.rows.map((prop, key) => {
           return {
               ...prop,
@@ -539,14 +540,38 @@ export class AllAirbasesComponent implements OnInit {
   }
 
     handleDelete(airbase: any) {
-        if (confirm("Are you sure ?"))
-            this.airbasesService.deleteAirbase(airbase)
-                .subscribe({
-                    next:data => {
-                        //this.getAllSquadrons();
-                        this.airbases = this.airbases.filter(s=>s.id!=airbase.id);
-                    }
-                })
+        swal
+            .fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                customClass: {
+                    cancelButton: "btn btn-danger",
+                    confirmButton: "btn btn-success mr-1",
+                },
+                confirmButtonText: "Yes, delete it!",
+                buttonsStyling: false
+            })
+            .then(result => {//subscribe
+                if (result.value) {
+                    this.airbasesService.deleteAirbase(airbase)
+                        .subscribe({
+                            next:data => {
+                                //this.getAllSquadrons();
+                                this.airbases = this.airbases.filter(s=>s.id!=airbase.id);
+                            }
+                        })
+                }
+            })
+
+
+
+        //if (confirm("Are you sure ?"))
+
     }
 
+    handleEdit(airbase_id: any) {
+        this._router.navigateByUrl('/airbases/editAirbase/'+btoa(airbase_id));
+    }
 }

@@ -4,14 +4,17 @@ import {AllAirbasesComponent} from "./all-airbases/all-airbases.component";
 
 export const AirbasesRoutes: Routes = [
     {
-        path: "",
+        path: "",//airbase
         children: [
             {
-                path: "newAirbase",
+                path: "newAirbase",//new
+                component: NewAirbaseComponent
+            }, {
+                path: "editAirbase/:id",
                 component: NewAirbaseComponent
             },
             {
-                path: "allAirbases",
+                path: "allAirbases",//all
                 component: AllAirbasesComponent
             }
         ]
