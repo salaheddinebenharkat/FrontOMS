@@ -21,7 +21,7 @@ export class AirbasesService {
     return this.http.delete<any>(`${this.apiServerUrl}/api/airbases/${airbase.id}`);
   }
 
-  saveSquadron(squadron: any) {
-    return this.http.post<any>(`${this.apiServerUrl}/api/squadrons/add`,squadron);
+  saveAirbase(airbase: any) {
+    return this.http.post<any>(`${this.apiServerUrl}/api/airbases/add`,airbase);
   }
 }

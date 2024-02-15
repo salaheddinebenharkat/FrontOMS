@@ -102,7 +102,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         return this.listTitles[item].title;
       }
     }
-    return "Dashboard";
+    return "OPERATIONS MANAGEMENT SYSTEM";
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;

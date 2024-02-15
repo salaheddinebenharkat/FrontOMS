@@ -8,6 +8,7 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AllAirbasesComponent} from "./all-airbases/all-airbases.component";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
+import {NgxDatatableModule} from "@swimlane/ngx-datatable";
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
         TooltipModule.forRoot(),
         CollapseModule.forRoot(),
         ReactiveFormsModule,
-        BsDatepickerModule
+        BsDatepickerModule,
+        NgxDatatableModule
     ],
     declarations: [
         AllAirbasesComponent,
