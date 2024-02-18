@@ -19,7 +19,6 @@ export class AirbasesService {
     return this.http.get(`${this.apiServerUrl}/api/airbases/${id}`);
   }
 
-
   public deleteAirbase(airbase:any){
     return this.http.delete<any>(`${this.apiServerUrl}/api/airbases/${airbase.id}`);
   }

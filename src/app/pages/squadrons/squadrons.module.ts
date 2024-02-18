@@ -1,7 +1,6 @@
-import { RouterModule } from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import { CommonModule } from "@angular/common";
 
-import {SquadronsRoutes} from "./squadrons.routing";
 import {NgModule} from "@angular/core";
 import {TooltipModule} from "ngx-bootstrap/tooltip";
 import {CollapseModule} from "ngx-bootstrap/collapse";
@@ -10,6 +9,26 @@ import {NewSQuadronComponent} from "./new-squadron/new-squadron.component";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
 import {AllSquadronsComponent} from "./all-squadrons/all-squadrons.component";
+
+export const SquadronsRoutes: Routes = [
+    {
+        path: "",
+        children: [
+            {
+                path: "newSquadron",
+                component: NewSQuadronComponent
+            },
+            {
+                path: "editSquadron/:id",
+                component: NewSQuadronComponent
+            },
+            {
+                path: "allSquadrons",
+                component: AllSquadronsComponent
+            }
+        ]
+    }
+];
 
 @NgModule({
     imports: [

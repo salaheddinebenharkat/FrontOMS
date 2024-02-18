@@ -20,6 +20,10 @@ export class SquadronService {
     return this.http.get<Array<any>>(`${this.apiServerUrl}/api/squadrons/all`);
   }
 
+  public getSquadron(id){
+    return this.http.get(`${this.apiServerUrl}/api/squadrons/${id}`);
+  }
+
   public deleteSquadron(squadron:any){
     return this.http.delete<any>(`${this.apiServerUrl}/api/squadrons/${squadron.id}`);
   }

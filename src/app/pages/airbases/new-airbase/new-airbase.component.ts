@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {AirbasesService} from "../airbases.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SwalService} from "../../../swal.service";
+import swal from "sweetalert2";
 
 @Component({
   selector: 'app-new-airbase',
@@ -25,14 +26,6 @@ export class NewAirbaseComponent implements OnInit {
       private _router:Router) { }
 
   ngOnInit(): void {
-    /*
-    private String name;
-    private String city;
-    private String latitude;
-    private String longitude;
-    private String surface;
-    private Date creationDate;
-     */
 
     this.airbaseForm = this.fb.group({
       id : this.fb.control(''),
@@ -53,14 +46,27 @@ export class NewAirbaseComponent implements OnInit {
 
   saveAirbase() {
     let airbase = this.airbaseForm.value;
-    console.log('save',airbase)
+    console.log('save', airbase)
     this.airbaseService.saveAirbase(airbase).subscribe({
-      next : data =>{
-        this.swal.showSwal('basic','airbase saved');
-        console.log('saved',airbase);
-        //alert(JSON.stringify(data));
+      next: data => {
+        console.log('saved', airbase);
+
+        swal.fire({
+          title: "Well done!",
+          text: "" + this.airbaseId ? 'Airbase updated successfully' : 'Airbase added successfully',
+          buttonsStyling: false,
+          customClass: {
+            confirmButton: "btn btn-success",
+          },
+          icon: "success"
+        }).then(result =>{
+          if (result.value){
+           // this._router.
+          }
+      }
+      )
       },
-      error : err =>{
+      error: err => {
         console.log(err);
       }
     })

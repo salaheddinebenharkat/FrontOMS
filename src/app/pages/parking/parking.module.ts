@@ -1,4 +1,4 @@
-import { RouterModule } from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 import {NgModule} from "@angular/core";
@@ -8,9 +8,28 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
 import {NewParkingComponent} from "./new-parking/new-parking.component";
-import {ParkingRoutes} from "./parking.routing";
 import {AllParkingComponent} from "./all-parking/all-parking.component";
 
+
+export const ParkingRoutes: Routes = [
+    {
+        path: "",
+        children: [
+            {
+                path: "newParking",
+                component: NewParkingComponent
+            },
+            {
+                path: "editParking/:id",
+                component: NewParkingComponent
+            },
+            {
+                path: "allParking",
+                component: AllParkingComponent
+            }
+        ]
+    }
+];
 @NgModule({
     imports: [
         CommonModule,

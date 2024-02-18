@@ -4,7 +4,7 @@
             <div class=" card">
                 <div class=" card-header"><h5 class=" title">Add new Parking</h5></div>
                 <div class=" card-body">
-                    <form>
+                    <form [formGroup]="parkingForm" (ngSubmit)="saveParking()">
                         <div class=" row">
                             <div class=" col-md-4 pr-md-1">
                                 <div class=" form-group">
@@ -12,39 +12,14 @@
                                     <input class=" form-control" formControlName="name" type="text" />
                                 </div>
                             </div>
-                            <div class=" col-md-4 px-md-1">
-                                <div class=" form-group">
-                                    <label> Airbase </label>
-                                    <select class="form-control" formControlName="airbase">
-                                        <option  value="1">DUKHAN</option>
-                                        <option value="2">EL ODEID</option>
-                                        <option value="3">DOHA</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--div class=" col-md-4 pl-md-1">
-                                <div class=" form-group">
-                                    <label> Creation date </label>
-                                    <input
-                                           placeholder="dd-mm-yyyy"
-                                           bsDatepicker
-                                           class="form-control"
-                                           data-datepicker-color="danger"
-                                           [bsConfig]="{ isAnimated: true, containerClass: 'theme-red' }"
-                                           [bsValue]="date"
-                                           id="datepicker"
-                                           type="text"
-                                    />
-                                </div>
-                            </div-->
                             <div class=" col-md-4 pl-md-1">
                                 <div class=" form-group">
                                     <label> Parking color </label>
-                                    <select class="form-control" formControlName="aircraftType">
-                                        <option  value="1">GREEN</option>
-                                        <option value="2">ORANGE</option>
-                                        <option value="3">RED</option>
-                                        <option value="3">BLUE</option>
+                                    <select class="form-control" formControlName="color">
+                                        <option>GREEN</option>
+                                        <option>ORANGE</option>
+                                        <option>RED</option>
+                                        <option>BLUE</option>
                                     </select>
                                 </div>
                             </div>
@@ -56,16 +31,16 @@
                                 <div class=" form-group">
                                     <label> Aircraft Type </label>
                                     <select class="form-control" formControlName="aircraftType">
-                                        <option  value="1">TYPHON</option>
-                                        <option value="2">RAFALE</option>
-                                        <option value="3">APACHE</option>
+                                        <option>TYPHON</option>
+                                        <option>RAFALE</option>
+                                        <option>APACHE</option>
                                     </select>
                                 </div>
                             </div>
                             <div class=" col-md-6 pl-md-1">
                                 <div class=" form-group">
                                     <label> Total Places </label>
-                                    <input class=" form-control" formControlName="totalAircraft" type="number" />
+                                    <input class=" form-control" formControlName="totalPlaces" type="number" />
                                 </div>
                             </div>
                         </div>
@@ -77,10 +52,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class=" card-footer">
+                            <button class=" btn btn-fill btn-danger" type="submit">Save</button>
+                        </div>
                     </form>
-                </div>
-                <div class=" card-footer">
-                    <button class=" btn btn-fill btn-danger" type="submit">Save</button>
                 </div>
             </div>
         </div>
