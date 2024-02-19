@@ -1,1 +1,83 @@
-<p>new-aircraftmaker works!</p>
+<div class=" content">
+    <div class=" row">
+        <div class=" col-lg-10 mx-auto">
+            <div class=" card">
+                <div class=" card-header"><h5 class=" title">Add New AircraftMaker</h5></div>
+                <div class=" card-body">
+                    <form>
+                        <div class=" row">
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> Airbase name </label>
+                                    <input class=" form-control" formControlName="name" type="text" />
+                                </div>
+                            </div>
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> City </label>
+                                    <select class="form-control" formControlName="city">
+                                        <option>DOHA</option>
+                                        <option>DUKHAN</option>
+                                        <option>OUAKRA</option>
+                                        <option>ASSAD</option>
+                                        <option>JAMILIA</option>
+                                        <option>LOUSSIL</option>
+                                        <option>NASSRANIA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> Creation date </label>
+                                    <input formControlName="creationDate"
+                                           placeholder="DD/MM/YYYY"
+                                           bsDatepicker
+                                           class="form-control"
+                                           data-datepicker-color="danger"
+                                           [bsConfig]="{ isAnimated: true, containerClass: 'theme-red' }"
+                                           [bsValue]="date"
+                                           id="datepicker"
+                                           type="text"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> Airbase Latitude </label>
+                                    <input class=" form-control" placeholder="Airbase latitude" formControlName="latitude" type="number" />
+                                </div>
+                            </div>
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> Airbase Longitude </label>
+                                    <input class=" form-control" placeholder="Airbase longitude" formControlName="longitude" type="number" />
+                                </div>
+                            </div>
+                            <div class=" col-md-4">
+                                <div class=" form-group">
+                                    <label> Total surface (Ha) </label>
+                                    <input class=" form-control" placeholder="The airbase surface in 'Ha'" formControlName="surface" type="number" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" row">
+                            <div class=" col-md-10 mx-auto">
+                                <div class=" form-group">
+                                    <label> About the airbase  </label>
+                                    <textarea class=" form-control" formControlName="description" cols="50" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" card-footer">
+                            <button class=" btn btn-fill btn-danger" type="submit">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -12,8 +12,16 @@ export class ParkingService {
 
   constructor(private http:HttpClient) { }
 
+  public getAllAirbases() : Observable<Array<any>>{
+    return this.http.get<Array<any>>(`${this.apiServerUrl}/api/airbases/all`);
+  }
+
   public getAllParking() : Observable<Array<any>>{
     return this.http.get<Array<any>>(`${this.apiServerUrl}/api/parking/all`);
+  }
+
+  public getParking(id){
+    return this.http.get(`${this.apiServerUrl}/api/parking/${id}`);
   }
 
   public deleteParking(parking:any){

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-aircraftmaker.component.scss']
 })
 export class NewAircraftmakerComponent implements OnInit {
+  date: Date | undefined;
 
   constructor() { }
 

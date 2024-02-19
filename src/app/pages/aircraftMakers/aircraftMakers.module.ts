@@ -1,4 +1,4 @@
-import { RouterModule } from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 import {NgModule} from "@angular/core";
@@ -7,10 +7,30 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
-import {AircraftMakersRoutes} from "./aircraftMakers.routing";
 import {AllAircraftmakersComponent} from "./all-aircraftmakers/all-aircraftmakers.component";
 import {NewAircraftmakerComponent} from "./new-aircraftmaker/new-aircraftmaker.component";
+import {NewAirbaseComponent} from "../airbases/new-airbase/new-airbase.component";
 
+
+export const AircraftMakersRoutes: Routes = [
+    {
+        path: "",
+        children: [
+            {
+                path: "newAircraftMaker",
+                component: NewAircraftmakerComponent
+            },
+            {
+                path: "editAircraftMaker/:id",
+                component: NewAirbaseComponent
+            },
+            {
+                path: "allAircraftMakers",
+                component: AllAircraftmakersComponent
+            }
+        ]
+    }
+];
 @NgModule({
     imports: [
         CommonModule,

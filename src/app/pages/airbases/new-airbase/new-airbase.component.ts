@@ -21,9 +21,8 @@ export class NewAirbaseComponent implements OnInit {
   constructor(
       private airbaseService:AirbasesService,
       private fb:FormBuilder,
-      private _activeRoute:ActivatedRoute,
-      private swal:SwalService,
-      private _router:Router) { }
+      private _router:Router,
+      private _activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
 

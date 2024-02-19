@@ -17,7 +17,8 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th class=" text-center">#</th>
-                                <th class=" text-center">Name</th>
+                                <th class=" text-center">NAME</th>
+                                <th class=" text-center">AIRBASE</th>
                                 <th class=" text-center">COLOR</th>
                                 <th class=" text-center">AIRCRAFT TYPE</th>
                                 <th class=" text-center">TOTAL PLACES</th>
@@ -25,9 +26,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let park of parking">
+                            <tr *ngFor="let park of parkings">
                                 <td class=" text-center">{{park.id}}</td>
                                 <td class=" text-center">{{park.name}}</td>
+                                <td class=" text-center">{{park.airbaseId}}</td>
                                 <td class=" text-center">{{park.color}}</td>
                                 <td class=" text-center">{{park.aircraftType}}</td>
                                 <td class=" text-center">{{park.totalPlaces}}</td>
@@ -40,6 +42,7 @@
                                         <i class=" tim-icons icon-paper" style="color: #0e84f8"> </i>
                                     </button>
                                     <button
+                                            (click)="handleEdit(park.id)"
                                             class=" btn btn-success btn-link btn-sm btn-icon"
                                             tooltip="Edit"
                                             type="button"
@@ -47,6 +50,7 @@
                                         <i class=" tim-icons icon-pencil"> </i>
                                     </button>
                                     <button
+                                            (click)="handleDelete(park)"
                                             class=" btn btn-danger btn-link btn-sm"
                                             tooltip="Delete"
                                             type="button"

@@ -48,6 +48,7 @@ export class NewSQuadronComponent implements OnInit {
       });
 
       this.getAllAirbases();
+
       if ( this._router.url.includes('editSquadron') ) {
           //init form
           this.initializeForm();
